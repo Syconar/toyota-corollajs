@@ -18,11 +18,19 @@ function Model(props){
 function App() {
   const audioRef = useRef(null);
   const [audioStarted, setAudioStarted] = useState(false);
+  const [muted, setMuted] = useState(true);
 
-  const handlePlayAudio = () => {
-    if (audioRef.current) {
+  const handleToggleAudio = () => {
+    if (!audioStarted) {
+      // Start playing the audio and unmute
       audioRef.current.play();
+      audioRef.current.muted = false;
       setAudioStarted(true);
+      setMuted(false);
+    } else {
+      // Toggle mute
+      audioRef.current.muted = !muted;
+      setMuted(!muted);
     }
   };
 
@@ -38,27 +46,25 @@ function App() {
 
   return (
     <>
-      <audio ref={audioRef} src="/funkytown.mp3" loop />
-      {!audioStarted && (
+      <audio ref={audioRef} src="/funkytown.mp3" loop muted/>
         <button
-          onClick={handlePlayAudio}
-          style={{
-            position: "absolute",
-            zIndex: 10,
-            top: 20,
-            left: 20,
-            padding: "12px 24px",
-            fontSize: "1.2rem",
-            borderRadius: "8px",
-            border: "none",
-            background: "#222",
-            color: "#fff",
-            cursor: "pointer"
-          }}
-        >
-          Play Music
-        </button>
-      )}
+        onClick={handleToggleAudio}
+        style={{
+          position: "absolute",
+          zIndex: 10,
+          top: 20,
+          left: 20,
+          padding: "12px 24px",
+          fontSize: "1.5rem",
+          border: "none",
+          background: "#222",
+          color: "#fff",
+          cursor: "pointer"
+        }}
+        aria-label={muted ? "Unmute music" : "Mute music"}
+      >
+        {muted ? "🚫" : "🎵"}
+      </button>
       <Canvas
         dpr={[1.2]}
         shadows 
