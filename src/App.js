@@ -16,28 +16,54 @@ function Model(props){
   return <primitive ref={ref} object={scene} {...props} />
 }
 
-// Audio function
 function App() {
+  // Loading states
+  const [isLoading, setIsLoading] = useState(true);
+  const [filled, setFilled] = useState(0);
+
+  // Minimum loading time and progress bar logic
+  useEffect(() => {
+    let timer;
+    let progress;
+    if (isLoading) {
+      // Progress bar fills over 3 seconds (3000ms / 100 steps = 30ms per step)
+      progress = setInterval(() => {
+        setFilled(prev => {
+          if (prev < 100) return prev + 2;
+          return prev;
+        });
+      }, 60); // 60ms * 50 steps = 3000ms
+
+      // Hide loading after 3 seconds
+      timer = setTimeout(() => {
+        setIsLoading(false);
+        setFilled(100);
+      }, 3200);
+    }
+    return () => {
+      clearTimeout(timer);
+      clearInterval(progress);
+    };
+  }, [isLoading]);
+
+  // Audio logic
   const audioRef = useRef(null);
   const [audioStarted, setAudioStarted] = useState(false);
   const [muted, setMuted] = useState(true);
 
   const handleToggleAudio = () => {
     if (!audioStarted) {
-      // Start playing the audio and unmute
       audioRef.current.play();
       audioRef.current.muted = false;
       setAudioStarted(true);
       setMuted(false);
     } else {
-      // Toggle mute
       audioRef.current.muted = !muted;
       setMuted(!muted);
     }
   };
 
   useEffect(() => {
-    // Pause audio when component unmounts
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -46,23 +72,29 @@ function App() {
     };
   }, []);
 
-// Loading gif effect
-const [isLoading, setIsLoading] = useState(true);
-
-useEffect(() => {
-  // Setting the minimum of loading time
-  const timer = setTimeout(() => {
-    setIsLoading(false);
-  }, 3000);
-}, []);
-
   return (
     <>
     {isLoading && (
       <div class="container" style={{ position: "fixed", top: 0, left: 0, zIndex: 2000 }}>
+
         <div class="loading">
           <img src="/loading/car-loading.gif"></img>
         </div>
+
+        <div className="progressBar">
+            <div 
+              style={{
+                width: `${filled}%`,
+                height: "100%",
+                backgroundColor: "#26634fff",
+                transition: "width 0.2s",
+              }}>
+            </div>
+
+            <span className="progressBarPercentage">
+            </span>
+
+          </div>
       </div>
     )}
 
@@ -92,12 +124,12 @@ useEffect(() => {
 
         <div className="flex flex-col items-center gap-10">
           <h1 className="color-00ffaa3d"><i class="fa-solid fa-oil-can"></i>Oil</h1>
-          <h2 className="color-white"><span>175</span>Kph</h2>
+          <h2 className="color-white"><span>50</span>L</h2>
         </div>
 
         <div className="flex flex-col items-center gap-10">
           <h1 className="color-00ffaa3d"><i class="fa-solid fa-bolt"></i>Power</h1>
-          <h2 className="color-white"><span>175</span>Kph</h2>
+          <h2 className="color-white"><span>63</span>kW</h2>
         </div>
 
       </div>

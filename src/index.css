@@ -49,6 +49,29 @@ body,
   justify-content: center;
   width: 100vw;
 }
+
+.progressBar{
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 12px;
+  background: #eee;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.progressBarPercentage{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  font-weight: bold;
+}
+
+
 /* */
 
 
