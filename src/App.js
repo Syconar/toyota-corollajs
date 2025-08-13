@@ -57,31 +57,25 @@ function App() {
     }}></img>
 
       <audio ref={audioRef} src="/funkytown.mp3" loop muted/>
-        <button
-        onClick={handleToggleAudio}
-        style={{
-          position: "absolute",
-          zIndex: 10,
-          top: 20,
-          right: 20,
-          padding: "12px 24px",
-          fontSize: "1.5rem",
-          border: "none",
-          background: "#222",
-          color: "#fff",
-          cursor: "pointer"
-        }}
-        aria-label={muted ? "Unmute music" : "Mute music"}
-      >
-        {muted ? "🚫" : "🎵"}
-      </button>
+
+      <div style={{ positio: "relative" }}>
+        <div className="audioPlayer">
+          <button
+            className="audioButton"
+            onClick={handleToggleAudio}
+            aria-label={muted ? "Unmute music" : "Mute music"}>
+            {muted ? <i class="fa-solid fa-volume-xmark"></i>: <i class="fa-solid fa-volume-high"></i>}
+          </button>
+        </div>
+      </div>
 
       <Canvas
         dpr={[1.2]}
-        shadows 
         camera={{ fov: 45, position: [0, 1, 5] }} 
-        style={{ position: "absolute" }}>
-        <color attach="background" args={["#101010"]} />
+        style={{ 
+          position: "absolute",
+          zIndex: 1, 
+        }}>
         <ambientLight intensity={2}/>
         <PresentationControls 
           speed={2} 
