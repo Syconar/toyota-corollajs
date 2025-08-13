@@ -46,6 +46,16 @@ function App() {
 
   return (
     <>
+    <img src="toyotalogo.gif"
+    style={{
+      position: "absolute",
+      top: 20,
+      left: 20,
+      maxWidth: "150px",
+      width: "100%",
+      zIndex: 10,
+    }}></img>
+
       <audio ref={audioRef} src="/funkytown.mp3" loop muted/>
         <button
         onClick={handleToggleAudio}
@@ -53,7 +63,7 @@ function App() {
           position: "absolute",
           zIndex: 10,
           top: 20,
-          left: 20,
+          right: 20,
           padding: "12px 24px",
           fontSize: "1.5rem",
           border: "none",
@@ -65,6 +75,7 @@ function App() {
       >
         {muted ? "🚫" : "🎵"}
       </button>
+
       <Canvas
         dpr={[1.2]}
         shadows 
