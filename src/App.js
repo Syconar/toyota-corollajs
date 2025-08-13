@@ -2,11 +2,12 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, PresentationControls } from "@react-three/drei";
 import { useRef, useEffect, useState } from "react";
 
+// Model of the car
 function Model(props){
   const { scene } = useGLTF("/toyota_corolla_ps1.glb");
   const ref = useRef();
 
-  useFrame(() => {
+  useFrame(() => { // Rotating animation and its speed
     if (ref.current) {
       ref.current.rotation.y += -0.01;
     }
@@ -15,6 +16,7 @@ function Model(props){
   return <primitive ref={ref} object={scene} {...props} />
 }
 
+// Audio function
 function App() {
   const audioRef = useRef(null);
   const [audioStarted, setAudioStarted] = useState(false);
@@ -44,21 +46,29 @@ function App() {
     };
   }, []);
 
+// Loading gif effect
+const [isLoading, setIsLoading] = useState(true);
+
+useEffect(() => {
+  // Setting the minimum of loading time
+  const timer = setTimeout(() => {
+    setIsLoading(false);
+  }, 3000);
+}, []);
+
   return (
     <>
+    {isLoading && (
+      <div class="container" style={{ position: "fixed", top: 0, left: 0, zIndex: 2000 }}>
+        <div class="loading">
+          <img src="/loading/car-loading.gif"></img>
+        </div>
+      </div>
+    )}
+
     <div className="absolute l-t-center flex align-center w-full">
       <h1 className="fontsize-3rem color-15171d33">Toyota Corolla</h1>
     </div>
-
-    <img src="toyotalogo.gif"
-    style={{
-      position: "absolute",
-      top: 20,
-      left: 20,
-      maxWidth: "150px",
-      width: "100%",
-      zIndex: 10,
-    }}></img>
 
       <audio ref={audioRef} src="/funkytown.mp3" loop muted/>
 

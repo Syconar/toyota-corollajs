@@ -1,3 +1,8 @@
+:root{
+  --gradient-bg: linear-gradient(
+    180deg, #2e3440 50%, #292e38 75%, #1b1f25 100%) 
+}
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -14,8 +19,7 @@
 body,
 #root{
   min-height: 100vh;
-  background: linear-gradient(
-    180deg, #2e3440 50%, #292e38 75%, #1b1f25 100%);
+  background: var(--gradient-bg);
   overflow-y: hidden;
   overflow-x: hidden;
   font-family: Arcade;
@@ -23,6 +27,33 @@ body,
   letter-spacing: 0.3em
 }
 
+
+/***** LOADING SCREEN *****/
+.loading{
+  height: 6em;
+  width: 6em;
+}
+
+.loading img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container{
+  align-items: center;
+  background: var(--gradient-bg);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+/* */
+
+
+
+/***** BACKGROUND HEADING *****/
 .absolute{
   position: absolute;
 }
@@ -44,13 +75,15 @@ body,
 .align-center{
   text-align: center;
 }
+/* */
+
 
 
 /***** AUDIO *****/
 .audioPlayer{
   position: absolute;
   top: 15rem;
-  right: 40rem;
+  right: 41rem;
   z-index: 1000;
 }
 
