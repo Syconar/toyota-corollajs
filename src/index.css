@@ -87,8 +87,30 @@ body,
   transform: translate(-50%, -50%);
 }
 
-.fontsize-3rem{
-  font-size: 12em;
+.header-size-responsive{
+  font-size: 12vw;
+}
+
+@media screen and (max-width: 1236px) {
+  .header-size-responsive{
+    font-size: 11vw;
+  }
+}
+
+@media screen and (max-width: 614px) {
+  .header-size-responsive{
+    font-size: 10vw;
+  }
+}
+
+.lineheight-1\.1{
+  line-height: 1.1;
+}
+
+.breakword{
+  word-wrap: break-word;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .color-15171d33{
@@ -98,15 +120,18 @@ body,
 .align-center{
   text-align: center;
 }
+
+
 /* */
 
 
 
 /***** AUDIO *****/
 .audioPlayer{
-  position: absolute;
-  top: 15rem;
-  right: 41rem;
+  position: fixed;
+  right: 35%;
+  top: 28%;
+  transform: translate(-50%, -50%);
   z-index: 1000;
 }
 
@@ -177,5 +202,21 @@ body,
 h1 i,
 h2 span{
   margin-right: 10px;
+}
+
+.details-size-responsive{
+  font-size: 2em;
+}
+
+@media screen and (max-width: 1236px) {
+  .details-size-responsive{
+  font-size: 1.7em;
+}
+}
+
+@media screen and (max-width: 614px) {
+  .details-size-responsive{
+  font-size: 1.4em;
+}
 }
 /* */
