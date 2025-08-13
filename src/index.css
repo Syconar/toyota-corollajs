@@ -4,15 +4,49 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: 'Arcade';
+  src: url(fonts/ARCADECLASSIC.TTF);
+  font-size: 1.4rem;
+  letter-spacing: 0.3em;
+}
+
 body,
 #root{
   min-height: 100vh;
   background: linear-gradient(
-    180deg, #2A3335, #2a2a35);
+    180deg, #2e3440 50%, #292e38 75%, #1b1f25 100%);
   overflow-y: hidden;
   overflow-x: hidden;
+  font-family: Arcade;
+  font-size: 1.4rem;
+  letter-spacing: 0.3em
 }
 
+.absolute{
+  position: absolute;
+}
+
+.l-t-center{
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+}
+
+.fontsize-3rem{
+  font-size: 12em;
+}
+
+.color-15171d33{
+  color: rgba(21, 23, 29, 0.2);
+}
+
+.align-center{
+  text-align: center;
+}
+
+
+/***** AUDIO *****/
 .audioPlayer{
   position: absolute;
   top: 15rem;
@@ -27,3 +61,65 @@ body,
   background: transparent;
   cursor: pointer;
 }
+/* */
+
+
+
+/***** CAR SPECIFICATIONS *****/
+.justify-evenly{
+  justify-content: space-evenly;
+}
+
+.items-end{
+  align-items: flex-end;
+}
+
+.flex{
+  display: flex;
+}
+
+.flex-nowrap{
+  flex-wrap: nowrap;
+}
+
+.flex-row{
+  flex-direction: row;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.w-full{
+  width: 100%;
+}
+
+.h-screen{
+  height: 100vh;
+}
+
+.bottom-\[7\%\]{
+  bottom: 7%;
+}
+
+.relative{
+  position: relative;
+}
+
+.color-00ffaa3d{
+  color: rgba(0, 255, 170, 0.239);
+}
+
+.color-white{
+  color: #fff;
+}
+
+.gap-10{
+  gap: 10px;
+}
+
+h1 i,
+h2 span{
+  margin-right: 10px;
+}
+/* */
