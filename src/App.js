@@ -1,8 +1,8 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, PresentationControls } from "@react-three/drei";
 import { useRef, useEffect, useState } from "react";
-import { audioIconOff } from "../public/audioIcons/audioIconOff.jsx";
-import { audioIconOn } from "../public/audioIcons/audioIconOn.jsx";
+import { audioIconOff } from "./audioIcons/audioIconOff.jsx";
+import { audioIconOn } from "./audioIcons/audioIconOn.jsx";
 
 
 // Model of the car
