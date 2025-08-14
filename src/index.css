@@ -85,7 +85,6 @@ section{
   height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  padding-bottom: 20px;
 }
 /* */
 
@@ -138,6 +137,10 @@ section{
   .gap-responsive{
   gap: 50px;
   }
+}
+
+.p-bottom-25{
+  padding-bottom: 25px;
 }
 /* */
 
