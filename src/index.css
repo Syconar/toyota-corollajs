@@ -150,7 +150,7 @@ body,
 .audioPlayer{
   position: fixed;
   right: 34vw;
-  top: 28vw;
+  top: 26%;
   transform: translate(-50%, -50%);
   z-index: 1000;
 }
@@ -176,7 +176,7 @@ body,
 @media screen and (max-width: 598px) {
   .audioPlayer{
     right: 25vw;
-    top: 45vw;
+    top: 28%;
   }
 
   .audioButton{
