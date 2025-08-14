@@ -211,18 +211,6 @@ section{
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
-
-.fade-in-out{ 
-  background-color: linear-gradient(
-    transparent 12%,
-    currentColor 30%,
-    currentColor 70%,
-    transparent 86%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-attachment: fixed;
-}
 /* */
 
 
@@ -260,16 +248,16 @@ section{
   flex-direction: column;
 }
 
+.flex-row{
+  flex-direction: row;
+}
+
 .w-full{
   width: 100%;
 }
 
 .h-screen{
   height: 100vh;
-}
-
-.bottom-\[7\%\]{
-  bottom: 7%;
 }
 
 .relative{
@@ -284,8 +272,17 @@ section{
   color: #fff;
 }
 
+.gap-5{
+  gap: 5px;
+}
+
 .gap-10{
   gap: 10px;
+}
+
+.text-items-center{
+  text-align: center;
+  align-items: center;
 }
 
 h1 i,
@@ -325,6 +322,10 @@ h2 span{
   .details-size-responsive{
   font-size: 0.9em;
   }
+}
+
+.carInfo{
+  width: 5rem;
 }
 
 .car-info-box{

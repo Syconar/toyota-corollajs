@@ -10,7 +10,7 @@ export const AudioIconOff = () => {
 				<path 
 				d="M633.333 333.333V366.667H600V333.333H533.333V400H566.667V433.333H533.333V500H600V466.667H633.333V500H700V433.333H666.667V400H700V333.333H633.333Z" 
 				fill="currentColor"/>
-</svg>
+		</svg>
 
     );
 };
