@@ -1,8 +1,8 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, PresentationControls } from "@react-three/drei";
 import { useRef, useEffect, useState } from "react";
-import { audioIconOff } from "./audioIcons/audioIconOff.jsx";
-import { audioIconOn } from "./audioIcons/audioIconOn.jsx";
+import { AudioIconOff } from "./audioIcons/audioIconOff.jsx";
+import { AudioIconOn } from "./audioIcons/audioIconOn.jsx";
 
 
 // Model of the car
@@ -130,10 +130,10 @@ function App() {
       <div style={{ positio: "relative" }}>
         <div className="audioPlayer">
           <button
-            className="audioButton"
+            className="audioButton flex"
             onClick={handleToggleAudio}
             aria-label={muted ? "Unmute music" : "Mute music"}>
-            {muted ? <span><audioIconOff/></span> : <span><audioIconOn/></span>}
+            {muted ? <span className="audioSpan"><AudioIconOff/></span> : <span className="audioSpan"><AudioIconOn/></span>}
           </button>
         </div>
       </div>

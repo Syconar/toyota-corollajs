@@ -1,18 +1,16 @@
-export const audioIconOn = () => {
+export const AudioIconOn = () => {
     return (
-        <svg 
-            width="800" 
-            height="800" 
+        <svg
             viewBox="0 0 800 800" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg">
 
                 <path 
                     d="M533.333 466.667H566.667V333.333H533.333V300H500V500H533.333V466.667Z" 
-                    fill="black"/>
+                    fill="currentColor"/>
                 <path 
                     d="M366.667 100V133.333H333.333V166.667H300V200H266.667V233.333H233.333V266.667H200V300H166.667V333.333H133.333V366.667H100V433.333H133.333V466.667H166.667V500H200V533.333H233.333V566.667H266.667V600H300V633.333H333.333V666.667H366.667V700H433.333V100H366.667ZM366.667 533.333H333.333V500H300V466.667H266.667V433.333H233.333V366.667H266.667V333.333H300V300H333.333V266.667H366.667V533.333Z" 
-                    fill="black"/>
+                    fill="currentColor"/>
                 <path 
                     d="M633.333 233.333V200H500V266.667H566.667V300H600V500H566.667V533.333H500V600H633.333V566.667H666.667V233.333H633.333Z" 
                     fill="currentColor"/>

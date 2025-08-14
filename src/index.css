@@ -35,6 +35,10 @@ body,
   background-attachment: fixed;
 }
 
+svg{
+  width: 100%;
+}
+
 
 /***** LOADING SCREEN *****/
 .loading{
@@ -149,14 +153,13 @@ body,
 /***** AUDIO *****/
 .audioPlayer{
   position: fixed;
-  right: 34vw;
+  right: 32vw;
   top: 26%;
   transform: translate(-50%, -50%);
   z-index: 1000;
 }
 
 .audioButton{
-  font-size: 2vw;
   border: none;
   color: #fff;
   background: transparent;
@@ -165,27 +168,37 @@ body,
 
 @media screen and (max-width: 898px) {
   .audioPlayer{
-    right: 28vw;
-  }
-
-  .audioButton{
-    font-size: 4vw;
+    right: 24vw;
   }
 }
 
 @media screen and (max-width: 598px) {
   .audioPlayer{
-    right: 25vw;
-  }
-
-@media screen and (max-width: 498px) {
-  .audioPlayer{
-    top: 46vw;
+    right: 22vw;
   }
 }
 
-  .audioButton{
-    font-size: 6vw;
+@media screen and (max-width: 498px) {
+  .audioPlayer{
+    right: 17vw;
+    top: 32%;
+  }
+}
+
+
+.audioSpan{
+  width: 5rem;
+}
+
+@media screen and (max-width: 598px) {
+  .audioSpan{
+  width: 4rem;
+  }
+}
+
+@media screen and (max-width: 498px) {
+  .audioSpan{
+  width: 3rem;
   }
 }
 /* */
