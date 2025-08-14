@@ -16,15 +16,19 @@
   letter-spacing: 0.3em;
 }
 
+html{
+  scroll-snap-type: y mandatory;
+}
+
 body,
 #root{
   min-height: 100vh;
   background: var(--gradient-bg);
-  overflow-y: hidden;
   overflow-x: hidden;
   font-family: Arcade;
   font-size: 1.4rem;
-  letter-spacing: 0.3em
+  letter-spacing: 0.3em;
+  background-attachment: fixed;
 }
 
 
@@ -35,7 +39,7 @@ body,
 }
 
 .loading img{
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -77,13 +81,19 @@ body,
 
 
 /***** BACKGROUND HEADING *****/
-.absolute{
-  position: absolute;
+section{
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.fixed{
+  position: fixed;
 }
 
 .l-t-center{
   left: 50%;
-  top: 46%;
+  top: 46vh;
   transform: translate(-50%, -50%);
 }
 
