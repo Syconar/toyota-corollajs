@@ -133,7 +133,7 @@ body,
   }
 }
 
-.p-bottom-responsive{
+/* .p-bottom-responsive{
   padding-bottom: 4vw;
 }
 
@@ -141,7 +141,7 @@ body,
   .p-bottom-responsive{
   padding-bottom: 25vw;
 }
-}
+} */
 /* */
 
 
@@ -176,8 +176,13 @@ body,
 @media screen and (max-width: 598px) {
   .audioPlayer{
     right: 25vw;
-    top: 28%;
   }
+
+@media screen and (max-width: 498px) {
+  .audioPlayer{
+    top: 46vw;
+  }
+}
 
   .audioButton{
     font-size: 6vw;
@@ -190,8 +195,20 @@ body,
 /***** SECTIONS *****/
 section{
   height: 100vh;
-  scroll-snap-align: end;
+  scroll-snap-align: start;
   scroll-snap-stop: always;
+}
+
+.fade-in-out{ 
+  background-color: linear-gradient(
+    transparent 12%,
+    currentColor 30%,
+    currentColor 70%,
+    transparent 86%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-attachment: fixed;
 }
 /* */
 
