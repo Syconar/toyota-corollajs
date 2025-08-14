@@ -1,6 +1,8 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, PresentationControls } from "@react-three/drei";
 import { useRef, useEffect, useState } from "react";
+import { audioIconOff } from "../public/audioIcons/audioIconOff.jsx";
+import { audioIconOn } from "../public/audioIcons/audioIconOn.jsx";
 
 
 // Model of the car
@@ -131,7 +133,7 @@ function App() {
             className="audioButton"
             onClick={handleToggleAudio}
             aria-label={muted ? "Unmute music" : "Mute music"}>
-            {muted ? <i class="fa-solid fa-volume-xmark"></i>: <i class="fa-solid fa-volume-high"></i>}
+            {muted ? <span><audioIconOff/></span> : <span><audioIconOn/></span>}
           </button>
         </div>
       </div>
