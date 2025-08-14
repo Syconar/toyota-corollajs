@@ -137,8 +137,7 @@ function App() {
       </div>
 
       <section>
-        <div className="fade-in-out"></div>
-        <div className="flex flex-responsive flex-nowrap w-full h-screen justify-evenly items-end relative p-bottom-responsive" >
+        <div className="flex flex-responsive flex-nowrap w-full h-screen justify-evenly items-end relative p-bottom-responsive fade-in-out" >
 
           <div className="car-info-box">
 

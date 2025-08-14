@@ -20,6 +20,10 @@ html{
   scroll-snap-type: y mandatory;
 }
 
+body{
+  color: #fff;
+}
+
 body,
 #root{
   min-height: 100vh;
@@ -146,7 +150,7 @@ body,
 .audioPlayer{
   position: fixed;
   right: 34vw;
-  top: 28%;
+  top: 28vw;
   transform: translate(-50%, -50%);
   z-index: 1000;
 }
@@ -191,12 +195,15 @@ section{
 }
 
 .fade-in-out{ 
-  background-image: linear-gradient(
+  background-color: linear-gradient(
     transparent 12%,
     currentColor 30%,
     currentColor 70%,
     transparent 86%
   );
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-attachment: fixed;
 }
 /* */
 
