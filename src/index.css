@@ -156,6 +156,7 @@ body,
 }
 
 .audioButton{
+  position: fixed;
   font-size: 2vw;
   border: none;
   color: #fff;
