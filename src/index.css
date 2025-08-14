@@ -80,16 +80,6 @@ body,
 
 
 
-/***** SECTIONS *****/
-section{
-  height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-/* */
-
-
-
 /***** BACKGROUND HEADING *****/
 .fixed{
   position: fixed;
@@ -139,8 +129,14 @@ section{
   }
 }
 
-.p-bottom-25{
+.p-bottom-responsive{
+  padding-bottom: 4vw;
+}
+
+@media screen and (max-width: 458px) {
+  .p-bottom-responsive{
   padding-bottom: 25vw;
+}
 }
 /* */
 
@@ -182,6 +178,25 @@ section{
   .audioButton{
     font-size: 4vw;
   }
+}
+/* */
+
+
+
+/***** SECTIONS *****/
+section{
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.fade-in-out{ 
+  background-image: linear-gradient(
+    transparent 12%,
+    currentColor 30%,
+    currentColor 70%,
+    transparent 86%
+  );
 }
 /* */
 
