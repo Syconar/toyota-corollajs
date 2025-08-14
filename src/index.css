@@ -87,20 +87,8 @@ body,
   transform: translate(-50%, -50%);
 }
 
-.header-size-responsive{
+.header-size-12vw{
   font-size: 12vw;
-}
-
-@media screen and (max-width: 1236px) {
-  .header-size-responsive{
-    font-size: 11vw;
-  }
-}
-
-@media screen and (max-width: 614px) {
-  .header-size-responsive{
-    font-size: 10vw;
-  }
 }
 
 .m-0auto{
@@ -157,8 +145,16 @@ body,
   flex-wrap: nowrap;
 }
 
-.flex-row{
+.flex-responsive{
   flex-direction: row;
+}
+
+@media screen and (max-width: 458px) {
+  .flex-responsive{
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  }
 }
 
 .flex-col{
@@ -205,12 +201,50 @@ h2 span{
 @media screen and (max-width: 1236px) {
   .details-size-responsive{
   font-size: 1.7em;
-}
+  }
 }
 
-@media screen and (max-width: 614px) {
+@media screen and (max-width: 628px) {
   .details-size-responsive{
   font-size: 1.4em;
+  }
 }
+
+@media screen and (max-width: 558px) {
+  .details-size-responsive{
+  font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .details-size-responsive{
+  font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 466px) {
+  .details-size-responsive{
+  font-size: 0.9em;
+  }
+}
+
+.car-info-box{
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+}
+
+@media screen and (max-width: 688px) {
+  .car-info-box{
+  gap: 50px;
+  }
+}
+
+@media screen and (max-width: 458px) {
+  .car-info-box{
+
+  flex-direction: column;
+  gap: 30px;
+  }
 }
 /* */

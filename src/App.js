@@ -119,8 +119,8 @@ function App() {
     )}
 
     <div className="absolute l-t-center align-center w-full">
-      <h1 className="header-size-responsive color-15171d33 m-0auto">Toyota</h1>
-      <h1 className="header-size-responsive color-15171d33 m-0auto">Corolla</h1>
+      <h1 className="header-size-12vw color-15171d33 m-0auto">Toyota</h1>
+      <h1 className="header-size-12vw color-15171d33 m-0auto">Corolla</h1>
     </div>
 
       <audio ref={audioRef} src="/funkytown.mp3" loop muted/>
@@ -136,7 +136,9 @@ function App() {
         </div>
       </div>
 
-      <div className="flex flex-row flex-nowrap w-full h-screen justify-evenly items-end relative bottom-[7%]" >
+      <div className="flex flex-responsive flex-nowrap w-full h-screen justify-evenly items-end relative bottom-[7%]" >
+
+        <div className="car-info-box">
 
         <div className="flex flex-col items-center gap-10">
           <h1 className="color-00ffaa3d details-size-responsive"><i class="fa-solid fa-gauge-high"></i>Speed</h1>
@@ -151,6 +153,8 @@ function App() {
         <div className="flex flex-col items-center gap-10">
           <h1 className="color-00ffaa3d details-size-responsive"><i class="fa-solid fa-bolt"></i>Power</h1>
           <h2 className="color-white details-size-responsive"><span>63</span>kW</h2>
+        </div>
+
         </div>
 
       </div>
