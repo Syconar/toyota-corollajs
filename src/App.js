@@ -2,6 +2,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF, PresentationControls } from "@react-three/drei";
 import { useRef, useEffect, useState } from "react";
 
+
 // Model of the car
 function Model(props){
   const { scene } = useGLTF("/toyota_corolla_ps1.glb");
@@ -16,13 +17,30 @@ function Model(props){
   return <primitive ref={ref} object={scene} {...props} />
 }
 
+
 function App() {
   // Loading states
   const [isLoading, setIsLoading] = useState(true);
   const [filled, setFilled] = useState(0);
+  const [carScale, setCarScale] = useState(0.2);
 
-  // Minimum loading time and progress bar logic
-  useEffect(() => {
+  useEffect(() => { // Responsive scale for the rotating car model
+        function handleResize() {
+      if (window.innerWidth < 600) {
+        setCarScale(0.12); // Mobile scale
+      } else if (window.innerWidth < 900) {
+        setCarScale(0.18); // Tablets scale
+      } else {
+        setCarScale(0.2); // Default scale
+      }
+    }
+    handleResize(); // setting initial scale
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+     }, []);
+
+
+  useEffect(() => { // Minimum loading time and progress bar logic
     let timer;
     let progress;
     if (isLoading) {
@@ -45,6 +63,7 @@ function App() {
       clearInterval(progress);
     };
   }, [isLoading]);
+
 
   // Audio logic
   const audioRef = useRef(null);
@@ -72,6 +91,7 @@ function App() {
     };
   }, []);
 
+
   return (
     <>
     {isLoading && (
@@ -98,8 +118,9 @@ function App() {
       </div>
     )}
 
-    <div className="absolute l-t-center flex align-center w-full">
-      <h1 className="header-size-responsive color-15171d33 lineheight-1.1 breakword">Toyota Corolla</h1>
+    <div className="absolute l-t-center align-center w-full">
+      <h1 className="header-size-responsive color-15171d33 m-0auto">Toyota</h1>
+      <h1 className="header-size-responsive color-15171d33 m-0auto">Corolla</h1>
     </div>
 
       <audio ref={audioRef} src="/funkytown.mp3" loop muted/>
@@ -134,6 +155,7 @@ function App() {
 
       </div>
 
+
       <Canvas
         dpr={[1.2]}
         camera={{ fov: 45, position: [0, 1, 5] }} 
@@ -151,7 +173,7 @@ function App() {
           global 
           zoom={1} 
           polar={[0, Math.PI / 4]}>
-            <Model scale={0.2}/>
+            <Model scale={carScale}/>
         </PresentationControls>
       </Canvas>
     </>

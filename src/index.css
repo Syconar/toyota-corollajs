@@ -103,13 +103,7 @@ body,
   }
 }
 
-.lineheight-1\.1{
-  line-height: 1.1;
-}
-
-.breakword{
-  word-wrap: break-word;
-  width: 50%;
+.m-0auto{
   margin: 0 auto;
 }
 
