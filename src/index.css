@@ -80,13 +80,18 @@ body,
 
 
 
-/***** BACKGROUND HEADING *****/
+/***** SECTIONS *****/
 section{
   height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  padding-bottom: 20px;
 }
+/* */
 
+
+
+/***** BACKGROUND HEADING *****/
 .fixed{
   position: fixed;
 }
@@ -101,6 +106,12 @@ section{
   font-size: 12vw;
 }
 
+@media screen and (max-width: 898px) {
+  .header-size-12vw{
+  font-size: 14vw;
+  }
+}
+
 .m-0auto{
   margin: 0 auto;
 }
@@ -113,7 +124,21 @@ section{
   text-align: center;
 }
 
+.gap-responsive{
+  gap: 0;
+}
 
+@media screen and (max-width: 898px) {
+  .gap-responsive{
+  gap: 25px;
+  }
+}
+
+@media screen and (max-width: 598px) {
+  .gap-responsive{
+  gap: 50px;
+  }
+}
 /* */
 
 

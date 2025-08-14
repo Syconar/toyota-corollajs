@@ -118,7 +118,7 @@ function App() {
       </div>
     )}
 
-    <div className="fixed l-t-center align-center w-full">
+    <div className="fixed flex flex-col l-t-center align-center w-full gap-responsive">
       <h1 className="header-size-12vw color-15171d33 m-0auto">Toyota</h1>
       <h1 className="header-size-12vw color-15171d33 m-0auto">Corolla</h1>
     </div>
