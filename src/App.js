@@ -146,17 +146,17 @@ function App() {
 
           <div className="car-info-box">
 
-            <div className="flex flex-col items-center gap-5">
+            <div className="flex flex-col text-items-center gap-5">
               <h1 className="color-00ffaa3d details-size-responsive flex gap-10 text-items-center"><span className="carInfo"><CarPower /></span>Speed</h1>
               <h2 className="color-white details-size-responsive"><span>175</span>Kph</h2>
             </div>
 
-            <div className="flex flex-col items-center gap-5">
+            <div className="flex flex-col text-items-center gap-5">
               <h1 className="color-00ffaa3d details-size-responsive flex gap-10 text-items-center"><span className="carInfo"><CarOil /></span>Oil</h1>
               <h2 className="color-white details-size-responsive"><span>50</span>L</h2>
             </div>
 
-            <div className="flex flex-col items-center gap-5">
+            <div className="flex flex-col text-items-center gap-5">
               <h1 className="color-00ffaa3d details-size-responsive flex gap-10 text-items-center"><span className="carInfo"><CarSpeed /></span>Power</h1>
               <h2 className="color-white details-size-responsive"><span>63</span>kW</h2>
             </div>
@@ -167,24 +167,24 @@ function App() {
       </section>
 
       <section>
-        <div className="flex flex-responsive flex-nowrap w-full h-screen justify-evenly items-end relative p-bottom-responsive" >
+        <div className="flex flex-responsive flex-nowrap w-full h-screen justify-evenly items-end relative p-bottom-responsive fade-in-out" >
 
           <div className="car-info-box">
 
-          <div className="flex flex-col items-center gap-10">
-            <h1 className="color-00ffaa3d details-size-responsive"><i class="fa-solid fa-gauge-high"></i>Speed</h1>
-            <h2 className="color-white details-size-responsive"><span>175</span>Kph</h2>
-          </div>
+            <div className="flex flex-col text-items-center gap-5">
+              <h1 className="color-00ffaa3d details-size-responsive flex gap-10 text-items-center"><span className="carInfo"><CarPower /></span>Speed</h1>
+              <h2 className="color-white details-size-responsive"><span>175</span>Kph</h2>
+            </div>
 
-          <div className="flex flex-col items-center gap-10">
-            <h1 className="color-00ffaa3d details-size-responsive"><i class="fa-solid fa-oil-can"></i>Oil</h1>
-            <h2 className="color-white details-size-responsive"><span>50</span>L</h2>
-          </div>
+            <div className="flex flex-col text-items-center gap-5">
+              <h1 className="color-00ffaa3d details-size-responsive flex gap-10 text-items-center"><span className="carInfo"><CarOil /></span>Oil</h1>
+              <h2 className="color-white details-size-responsive"><span>50</span>L</h2>
+            </div>
 
-          <div className="flex flex-col items-center gap-10">
-            <h1 className="color-00ffaa3d details-size-responsive"><i class="fa-solid fa-bolt"></i>Power</h1>
-            <h2 className="color-white details-size-responsive"><span>63</span>kW</h2>
-          </div>
+            <div className="flex flex-col text-items-center gap-5">
+              <h1 className="color-00ffaa3d details-size-responsive flex gap-10 text-items-center"><span className="carInfo"><CarSpeed /></span>Power</h1>
+              <h2 className="color-white details-size-responsive"><span>63</span>kW</h2>
+            </div>
 
           </div>
 
